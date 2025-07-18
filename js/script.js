@@ -71,7 +71,7 @@ function sendMessage(event) {
     return;
   }
 
-  showSuccessPopup();
+  showSuccessPopup(nameField.value.trim(), emailField.value.trim());
   document.getElementById("messageForm").reset();
 }
 
@@ -112,9 +112,13 @@ function closeValidationPopup() {
   }, 300);
 }
 
-function showSuccessPopup() {
+function showSuccessPopup(name, email) {
   const popup = document.getElementById("successPopup");
   const content = document.getElementById("successPopupContent");
+  const successMessage = document.getElementById("successMessage");
+
+  successMessage.innerHTML = `Message from <strong>${name}</strong> and <strong>${email}</strong> successfully sent!`;
+
   popup.classList.remove("hidden");
   setTimeout(() => {
     popup.classList.remove("opacity-0");
