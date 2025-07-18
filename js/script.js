@@ -2,13 +2,13 @@
 function getGreeting() {
   const hour = new Date().getHours();
   if (hour >= 5 && hour < 12) {
-    return "Good Morning";
+    return "Good Morning,";
   } else if (hour >= 12 && hour < 15) {
-    return "Good Afternoon";
+    return "Good Afternoon,";
   } else if (hour >= 15 && hour < 18) {
-    return "Good Evening";
+    return "Good Evening,";
   } else {
-    return "Good Night";
+    return "Good Night,";
   }
 }
 
@@ -39,7 +39,7 @@ function submitPopupName() {
 
     // Greeting and name
     document.getElementById("greeting").textContent = getGreeting();
-    document.getElementById("guestName").textContent = nama;
+    document.getElementById("guestName").textContent = nama + "!";
   } else {
     alert("Please enter your name!");
   }
